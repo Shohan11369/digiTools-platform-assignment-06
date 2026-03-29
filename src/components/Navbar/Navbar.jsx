@@ -8,7 +8,7 @@ const Navbar = () => {
         <div className="navbar-start">
           <a className=" text-[#4F39F6] text-xl font-bold">DigiTools</a>
         </div>
-        <div className="navbar-center  lg:flex">
+        <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
             <li>
               <a>Products</a>
