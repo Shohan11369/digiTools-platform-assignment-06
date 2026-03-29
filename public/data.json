@@ -1,0 +1,90 @@
+[
+  {
+    "id": 1,
+    "title": "AI Writing Pro",
+    "description": "Generate high-quality content, blogs, and marketing copy in seconds with advanced AI.",
+    "price": 29,
+    "billing": "monthly",
+    "features": [
+      "Unlimited AI generations",
+      "50+ writing templates",
+      "Grammar checker"
+    ],
+    "tag": "Best Seller",
+    "image": "https://img.icons8.com/color/100/google-logo.png"
+  },
+  {
+    "id": 2,
+    "title": "Design Templates Pack",
+    "description": "2000+ premium templates for social media, presentations, and marketing materials.",
+    "price": 49,
+    "billing": "one-time",
+    "features": ["2000+ templates", "Monthly updates", "Commercial license"],
+    "tag": "Popular",
+    "image": "https://img.icons8.com/color/100/google-logo.png"
+  },
+  {
+    "id": 3,
+    "title": "Premium Stock Assets",
+    "description": "Access millions of royalty-free photos, videos, and graphics for your projects.",
+    "price": 19,
+    "billing": "monthly",
+    "features": ["10M+ assets", "Commercial use", "No attribution"],
+    "tag": "New",
+    "image": "https://img.icons8.com/color/100/google-logo.png"
+  },
+  {
+    "id": 4,
+    "title": "Automation Toolkit",
+    "description": "Automate repetitive tasks and streamline your workflow with powerful tools.",
+    "price": 79,
+    "billing": "monthly",
+    "features": ["50+ automations", "API access", "Custom workflows"],
+    "tag": "Popular",
+    "image": "https://img.icons8.com/color/100/google-logo.png"
+  },
+  {
+    "id": 5,
+    "title": "Resume Builder Pro",
+    "description": "Create professional resumes and cover letters that land interviews.",
+    "price": 15,
+    "billing": "one-time",
+    "features": ["100+ templates", "ATS optimization", "Export to PDF"],
+    "tag": "New",
+    "image": "https://img.icons8.com/color/100/google-logo.png"
+  },
+  {
+    "id": 6,
+    "title": "Social Media Content Kit",
+    "description": "Complete toolkit for creating engaging social media content across all platforms.",
+    "price": 39,
+    "billing": "monthly",
+    "features": ["5000+ assets", "Scheduler included", "Analytics dashboard"],
+    "tag": "Best Seller",
+    "image": "https://img.icons8.com/color/100/google-logo.png"
+  },
+  {
+    "id": 7,
+    "title": "Email Marketing Pro",
+    "description": "Design and automate high-converting email campaigns with ease.",
+    "price": 25,
+    "billing": "monthly",
+    "features": [
+      "Drag & drop builder",
+      "Automation workflows",
+      "Analytics tracking"
+    ],
+    "tag": "Popular",
+    "image": "https://img.icons8.com/color/100/google-logo.png"
+  },
+  {
+    "id": 8,
+    "title": "Website Builder Kit",
+    "description": "Build responsive and modern websites without coding.",
+    "price": 59,
+    "billing": "one-time",
+    "features": ["100+ templates", "SEO tools", "Custom domains"],
+    "tag": "New",
+    "image": "https://img.icons8.com/color/100/google-logo.png"
+  }
+]

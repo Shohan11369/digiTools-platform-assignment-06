@@ -34,7 +34,7 @@ const Banner = () => {
           {/* left */}
           <div className="flex justify-center lg:justify-end">
             <img
-              className="h-[400px] w-auto drop-shadow-2xl animate-pulse rounded-3xl"
+              className="h-100 w-auto drop-shadow-2xl animate-pulse rounded-3xl"
               src={BannerImg}
               alt="Banner"
             />
