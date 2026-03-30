@@ -58,7 +58,7 @@ function App() {
       {activeTab === "model" ? (
         <Models modelPromise={modelPromise} carts={carts} setCarts={setCarts} />
       ) : (
-        <Cart  carts={carts}/>
+        <Cart  carts={carts} setCarts={setCarts}/>
       )}
     </>
   );
