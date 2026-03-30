@@ -19,6 +19,9 @@ function App() {
 
   const [activeTab, setActiveTab] = useState("model");
 
+  const [carts, setCarts]= useState([])
+  // console.log(carts)
+
   return (
     <>
       <Navbar />
@@ -53,9 +56,9 @@ function App() {
         />
       </div>
       {activeTab === "model" ? (
-        <Models modelPromise={modelPromise} />
+        <Models modelPromise={modelPromise} carts={carts} setCarts={setCarts} />
       ) : (
-        <Cart />
+        <Cart  carts={carts}/>
       )}
     </>
   );

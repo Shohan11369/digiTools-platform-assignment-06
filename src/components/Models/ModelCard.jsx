@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { FaCheck } from "react-icons/fa";
-const ModelCard = ({ model, ind }) => {
+const ModelCard = ({ model, ind, carts, setCarts }) => {
   const [isBuy, setIsBuy] = useState(false);
 
   const handleButton = () => {
     setIsBuy(true);
+    setCarts([...carts, model])
   };
 
   return (
