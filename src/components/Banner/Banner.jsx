@@ -21,7 +21,7 @@ const Banner = () => {
 
             {/* button */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4">
-              <button className="btn w-full bg-[#4F39F6] btn-lg text-white rounded-2xl px-5 md:px-10 shadow-lg shadow-red-200">
+              <button className="btn w-full bg-linear-to-r from-[#4F39F6] to-[#9514FA] btn-lg text-white rounded-2xl px-5 md:px-10 shadow-lg shadow-red-200">
                 Explore Products
               </button>
 

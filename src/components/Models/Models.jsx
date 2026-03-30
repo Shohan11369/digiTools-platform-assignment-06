@@ -1,5 +1,7 @@
 import React, { use } from "react";
 
+import ModelCard from "./ModelCard";
+
 const Models = ({ modelPromise }) => {
   console.log(modelPromise);
   const models = use(modelPromise);
@@ -15,27 +17,8 @@ const Models = ({ modelPromise }) => {
 
       <div className="grid grid-cols-3 gap-5  mb-4">
         {models.map((model, ind) => (
-          <div key={ind} className="border p-5 space-y-4">
-            <h2>Best Seller</h2>
-            <div>
-              <img src={model.image} alt="" />
-            </div>
-            <div className="space-y-3">
-              <h2 className="font-bold">{model.title}</h2>
-              <p>{model.description}</p>
-            </div>
-            <div>
-              <h2 className="font-semibold">{model.price}/ monthly</h2>
-            </div>
-            <div>
-              <li> {model.features} </li>
-            </div>
-
-            {/* button */}
-            <div>
-                <button className="btn bg-blue-500 text-white">But now</button>
-            </div>
-          </div>
+         
+         <ModelCard key={ind} model={model}/>
         ))}
       </div>
     </div>
