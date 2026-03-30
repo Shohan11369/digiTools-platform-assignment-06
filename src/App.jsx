@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./App.css";
 import Banner from "./components/Banner/Banner";
 import Starts from "./components/Banner/Starts";
@@ -14,6 +15,10 @@ const getModels = async () => {
 const modelPromise = getModels();
 
 function App() {
+  // model & cart
+
+  const [activeTab, setActiveTab] = useState("model");
+
   return (
     <>
       <Navbar />
@@ -26,21 +31,32 @@ function App() {
         <input
           type="radio"
           name="my_tabs_1"
-          className="tab bg-linear-to-r from-[#4F39F6] to-[#9514FA] text-white rounded-xl"
+          className={`tab rounded-xl ${
+            activeTab === "model"
+              ? "bg-linear-to-r from-[#4F39F6] to-[#9514FA] text-white"
+              : ""
+          }`}
           aria-label="Products"
           defaultChecked
+          onClick={() => setActiveTab("model")}
         />
         <input
           type="radio"
           name="my_tabs_1"
-          className="tab"
+          className={`tab rounded-xl ${
+            activeTab === "Cart"
+              ? "bg-linear-to-r from-[#4F39F6] to-[#9514FA] text-white"
+              : ""
+          }`}
           aria-label="Cart"
-          
+          onClick={() => setActiveTab("Cart")}
         />
-        
       </div>
-      <Models modelPromise={modelPromise} />
-      <Cart />
+      {activeTab === "model" ? (
+        <Models modelPromise={modelPromise} />
+      ) : (
+        <Cart />
+      )}
     </>
   );
 }
