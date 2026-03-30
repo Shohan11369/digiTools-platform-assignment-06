@@ -1,4 +1,5 @@
 import React from "react";
+import { MdDelete } from "react-icons/md";
 
 const Cart = ({ carts, setCarts }) => {
   // total count
@@ -9,12 +10,23 @@ const Cart = ({ carts, setCarts }) => {
     setCarts([]);
   };
 
+  //   delete function
+
+  const handleDelete = (item) => {
+    console.log(item);
+
+    const filterArray = carts.filter((i) => i.id !== item.id);
+    setCarts(filterArray);
+  };
+
   return (
     <div className="p-5 shadow shadow-amber-50 container mx-auto">
       <h1 className="text-xl font-bold mb-6">Your Carts</h1>
 
       {carts.length === 0 ? (
-        <p className="text-center p-6 bg-amber-50 text-xl font-semibold">Cart is empty</p>
+        <p className="text-center p-6 bg-amber-50 text-xl font-semibold">
+          Cart is empty
+        </p>
       ) : (
         <>
           <div className="mb-4 space-y-5">
@@ -29,14 +41,17 @@ const Cart = ({ carts, setCarts }) => {
                     />
                   </div>
 
-                  <div className="space-y-2">
+                  <div className=" flex-1 space-y-2">
                     <h2 className="text-xl font-bold">{item.title}</h2>
                     <p className="text-xl">${item.price}</p>
                   </div>
 
-                  <div>
-                    
-                  </div>
+                  <button
+                    className="btn p-2 text-red-500 cursor-pointer"
+                    onClick={()=> handleDelete(item)}
+                  >
+                    <MdDelete size={24} />
+                  </button>
                 </div>
               </div>
             ))}
@@ -53,7 +68,7 @@ const Cart = ({ carts, setCarts }) => {
 
           <div className="mt-5">
             <button
-              onClick={handlePaymentButton}
+              onClick={ handlePaymentButton}
               className=" w-full p-4 bg-linear-to-r from-[#4F39F6] to-[#9514FA] text-white text-xl font-bold rounded-2xl"
             >
               Proceed to Checkout
