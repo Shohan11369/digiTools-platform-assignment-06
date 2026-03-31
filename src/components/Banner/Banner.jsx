@@ -1,5 +1,7 @@
 import React from "react";
 import BannerImg from "../../assets/banner.png";
+import buttonImg from "../../assets/Play.png"
+import { FaCircle } from "react-icons/fa";
 const Banner = () => {
   return (
     <div className="container mx-auto">
@@ -7,8 +9,8 @@ const Banner = () => {
         <div className="mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center w-full">
           {/* right */}
           <div className="space-y-6 text-center md:text-start">
-            <div className="inline-flex items-center gap-2 bg-[#E1E7FF] text-[#4F39F6] text-sm font-bold px-4 py-2 rounded-full">
-              ✨ Frontier AI Marketplace
+            <div className="inline-flex items-center gap-2 bg-[#E1E7FF] text-[#2614ac] text-sm font-bold px-4 py-2 rounded-full">
+              <FaCircle /> Frontier AI Marketplace
             </div>
             <h1 className="text-3xl lg:text-4xl font-black leading-tight">
               One Subscription. <br />
@@ -26,7 +28,7 @@ const Banner = () => {
               </button>
 
               <button className="btn w-full btn-lg text-black rounded-2xl px-5 md:px-10 shadow-lg">
-                Watch Demo
+               <img src={buttonImg} alt="" /> Watch Demo
               </button>
             </div>
           </div>

@@ -1,5 +1,7 @@
 import React from "react";
 import UserImg from "../../assets/user.png";
+import packageImg from "../../assets/package.png";
+import rocketImg from "../../assets/rocket.png";
 
 const Steps = () => {
   const stepData = [
@@ -15,43 +17,45 @@ const Steps = () => {
       title: "Choose Tools",
       description:
         "Browse and select premium digital tools that suit your needs.",
-      img: UserImg,
+      img: packageImg,
     },
     {
       id: 3,
       title: "Start Using",
       description: "Access your tools instantly and boost your productivity.",
-      img: UserImg,
+      img: rocketImg,
     },
   ];
 
   return (
-    <div className="bg-[#F9FAFC]">
-      <div className="space-y-4 mb-6 mt-7 container mx-auto p-8 ">
+    <div className="bg-[#F9FAFC] py-12">
+      <div className="container mx-auto px-4">
         {/* Heading */}
-        <div className="text-center mb-5 mt-4">
-          <h2 className="text-xl md:text-2xl font-bold">
+        <div className="text-center mb-12">
+          <h2 className="text-2xl md:text-3xl font-bold">
             Get Started in 3 Steps
           </h2>
-          <p className="text-gray-600">
+          <p className="text-gray-600 mt-2">
             Start using premium digital tools in minutes, not hours.
           </p>
         </div>
 
         {/* Steps Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {stepData.map((step, index) => (
             <div
               key={step.id}
-              className=" p-6 shadow-2xl rounded-2xl flex flex-col items-center space-y-4"
+              className="relative p-6 shadow-xl rounded-2xl flex flex-col items-center space-y-4 bg-white"
             >
-              <div className="w-full flex justify-end">
-                <button className="text-xl bg-linear-to-r from-[#4F39F6] to-[#9514FA] rounded-full px-4 py-2 text-white">
-                  0{index + 1}
+              {/* Step Number */}
+              <div className="absolute -top-4 left-4">
+                <button className="text-sm md:text-base bg-gradient-to-r from-[#4F39F6] to-[#9514FA] rounded-full px-3 py-1 text-white font-semibold">
+                  {index + 1 < 10 ? `0${index + 1}` : index + 1}
                 </button>
               </div>
 
-              <div className="w-16 h-18 bg-blue-100 p-3 rounded-full">
+              {/* Image */}
+              <div className="w-20 h-20 md:w-24 md:h-24 bg-blue-100 p-4 rounded-full flex items-center justify-center">
                 <img
                   src={step.img}
                   alt={step.title}
@@ -59,9 +63,12 @@ const Steps = () => {
                 />
               </div>
 
+              {/* Text */}
               <div className="text-center space-y-2">
-                <h3 className="font-bold text-lg">{step.title}</h3>
-                <p className="text-gray-600 text-sm">{step.description}</p>
+                <h3 className="font-bold text-lg md:text-xl">{step.title}</h3>
+                <p className="text-gray-600 text-sm md:text-base">
+                  {step.description}
+                </p>
               </div>
             </div>
           ))}

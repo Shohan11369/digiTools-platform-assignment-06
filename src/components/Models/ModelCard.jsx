@@ -5,7 +5,6 @@ const ModelCard = ({ model, carts, setCarts }) => {
   const [isBuy, setIsBuy] = useState(false);
 
   const handleButton = () => {
-
     const isFound = carts.find((item) => item.id === model.id);
 
     if (isFound) {
@@ -13,7 +12,7 @@ const ModelCard = ({ model, carts, setCarts }) => {
       return;
     }
 
-     setIsBuy(true);
+    setIsBuy(true);
 
     setCarts([...carts, model]);
     toast.success("Added to cart");
@@ -25,7 +24,20 @@ const ModelCard = ({ model, carts, setCarts }) => {
         key={name.id}
         className="p-6 space-y-4 shadow-lg rounded-2xl border overflow-hidden border-zinc-300"
       >
-        <h2 className="text-end">{model.tag}</h2>
+        <div className="flex justify-end">
+          <button
+          className={`btn-end px-2 py-1 rounded-md text-sm font-semibold ${
+            model.tag === "Best Seller"
+              ? "bg-yellow-400 text-black" 
+              : model.tag === "Popular"
+                ? "bg-green-500 text-white" 
+                : "bg-red-200 text-black" 
+          }`}
+        >
+          {model.tag}
+        </button>
+        </div>
+
         <div className="  ">
           <img className="h-20 w-20 object-contain" src={model.icon} alt="" />
         </div>
@@ -38,7 +50,9 @@ const ModelCard = ({ model, carts, setCarts }) => {
           </div>
 
           <div>
-            <h2 className="font-semibold">{model.price}/ {model.period}</h2>
+            <h2 className="font-semibold">
+              {model.price}/ {model.period}
+            </h2>
           </div>
 
           <div>

@@ -19,62 +19,77 @@ const getModels = async () => {
 const modelPromise = getModels();
 
 function App() {
-  // model & cart
-
   const [activeTab, setActiveTab] = useState("model");
-
-  const [carts, setCarts]= useState([])
-  // console.log(carts)
+  const [carts, setCarts] = useState([]);
 
   return (
     <>
-      <Navbar carts={carts} />
-      <Banner />
-      <Starts />
-
-      {/* tab */}
-      {/* name of each tab group should be unique */}
-      <div className="tabs gap-4 mt-6 justify-center space-y-6">
-        <input
-          type="radio"
-          name="my_tabs_1"
-          className={`tab rounded-xl ${
-            activeTab === "model"
-              ? "bg-linear-to-r from-[#4F39F6] to-[#9514FA] text-white"
-              : ""
-          }`}
-          aria-label="Products"
-          defaultChecked
-          onClick={() => setActiveTab("model")}
-        />
-        <input
-          type="radio"
-          name="my_tabs_1"
-          className={`tab rounded-xl ${
-            activeTab === "Cart"
-              ? "bg-linear-to-r from-[#4F39F6] to-[#9514FA] text-white"
-              : ""
-          }`}
-          aria-label={`cart (${carts.length})`}
-          onClick={() => setActiveTab("Cart")}
-        />
-      </div>
-
-      {/* models */}
-      {activeTab === "model" ? (
-        <Models modelPromise={modelPromise} carts={carts} setCarts={setCarts} />
-      ) : (
-        <Cart  carts={carts} setCarts={setCarts}/>
+      {/* if  model tab then  Banner & Starts */}
+      {activeTab === "model" && (
+        <>
+          <Navbar carts={carts} />
+          <Banner />
+          <Starts />
+        </>
       )}
 
-      {/* steps */}
-      <Steps/>
+      {/* Tabs  Products & Cart  */}
+      <div className="text-center mt-4 mb-6 space-y-4 p-6">
+        <h2 className="font-bold text-xl">Premium Digital Tools</h2>
+        <p className="text-sm">
+          Choose from our curated collection of premium digital products <br />
+          designed to boost your productivity and creativity.
+        </p>
 
-      <PricingSection/>
+        {/* Tabs Controller */}
+        <div className="tabs gap-4 mt-6 justify-center flex">
+          <input
+            type="radio"
+            name="my_tabs_1"
+            className={`tab rounded-xl ${
+              activeTab === "model"
+                ? "bg-linear-to-r from-[#4F39F6] to-[#9514FA] text-white"
+                : ""
+            }`}
+            aria-label="Products"
+            checked={activeTab === "model"}
+            onChange={() => setActiveTab("model")}
+          />
+          <input
+            type="radio"
+            name="my_tabs_1"
+            className={`tab rounded-xl ${
+              activeTab === "Cart"
+                ? "bg-linear-to-r from-[#4F39F6] to-[#9514FA] text-white"
+                : ""
+            }`}
+            aria-label={`Cart (${carts.length})`}
+            checked={activeTab === "Cart"}
+            onChange={() => setActiveTab("Cart")}
+          />
+        </div>
+      </div>
 
-      <Transform/>
-
-      <Footer/>
+      {/* condition */}
+      {activeTab === "model" ? (
+        <>
+          {/* if click product tap then show these */}
+          <Models
+            modelPromise={modelPromise}
+            carts={carts}
+            setCarts={setCarts}
+          />
+          <Steps />
+          <PricingSection />
+          <Transform />
+          <Footer />
+        </>
+      ) : (
+        <>
+          {/* if tab cart then show only carts section */}
+          <Cart carts={carts} setCarts={setCarts} />
+        </>
+      )}
     </>
   );
 }

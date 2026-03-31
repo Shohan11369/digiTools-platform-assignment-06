@@ -6,10 +6,10 @@ const Navbar = ({ carts }) => {
     <div className="container mx-auto">
       <div className="navbar bg-base-100">
         <div className="navbar-start">
-          <a className=" text-[#4F39F6] text-xl font-bold">DigiTools</a>
+          <a className=" text-[#4F39F6] font-bold">DigiTools</a>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">
+          <ul className="menu menu-horizontal px-1 text-lg">
             <li>
               <a>Products</a>
             </li>

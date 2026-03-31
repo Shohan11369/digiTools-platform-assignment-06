@@ -54,17 +54,17 @@ const pricingPlans = [
 
 const PricingSection = () => {
   return (
-    <div className="py-16 px-4 md:px-16 bg-white text-gray-900">
+    <div className="py-16 px-4 md:px-16 bg-gray-100 text-gray-900">
       <div className="text-center mb-12">
         <h2 className="text-3xl font-bold mb-2">Simple, Transparent Pricing</h2>
         <p className="text-gray-600">Choose the plan that fits your needs. Upgrade or downgrade anytime.</p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {pricingPlans.map((plan) => (
           <div
             key={plan.id}
-            className={`border rounded-2xl p-8 flex flex-col justify-between shadow-lg ${
+            className={`rounded-2xl p-8 flex flex-col justify-between shadow-lg ${
               plan.highlighted
                 ? "bg-linear-to-b from-[#7F3DFF] to-[#4F39F6] text-white transform scale-105"
                 : "bg-white"
