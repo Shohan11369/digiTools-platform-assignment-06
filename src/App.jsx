@@ -30,7 +30,7 @@ function App() {
 
       {/* tab */}
       {/* name of each tab group should be unique */}
-      <div className="tabs gap-4 tabs-box mt-4 justify-center">
+      <div className="tabs gap-4 mt-6 justify-center space-y-6">
         <input
           type="radio"
           name="my_tabs_1"
@@ -55,6 +55,8 @@ function App() {
           onClick={() => setActiveTab("Cart")}
         />
       </div>
+
+      {/* models */}
       {activeTab === "model" ? (
         <Models modelPromise={modelPromise} carts={carts} setCarts={setCarts} />
       ) : (

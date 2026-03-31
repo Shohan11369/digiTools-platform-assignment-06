@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import { FaCheck } from "react-icons/fa";
 import { toast } from "react-toastify";
-const ModelCard = ({ model, ind, carts, setCarts }) => {
+const ModelCard = ({ model, carts, setCarts }) => {
   const [isBuy, setIsBuy] = useState(false);
 
   const handleButton = () => {
-    setIsBuy(true);
 
     const isFound = carts.find((item) => item.id === model.id);
 
@@ -14,6 +13,8 @@ const ModelCard = ({ model, ind, carts, setCarts }) => {
       return;
     }
 
+     setIsBuy(true);
+
     setCarts([...carts, model]);
     toast.success("Added to cart");
   };
@@ -21,15 +22,15 @@ const ModelCard = ({ model, ind, carts, setCarts }) => {
   return (
     <div>
       <div
-        key={ind}
-        className="p-3 space-y-4 shadow-lg rounded-lg border overflow-hidden border-zinc-300"
+        key={name.id}
+        className="p-6 space-y-4 shadow-lg rounded-2xl border overflow-hidden border-zinc-300"
       >
-        <h2 className="text-end">Best Seller</h2>
-        <div className="flex justify-center items-center h-56">
-          <img className="h-40 w-40 object-contain" src={model.image} alt="" />
+        <h2 className="text-end">{model.tag}</h2>
+        <div className="  ">
+          <img className="h-20 w-20 object-contain" src={model.icon} alt="" />
         </div>
         <div className="space-y-3">
-          <h2 className="font-bold">{model.title}</h2>
+          <h2 className="font-bold">{model.name}</h2>
           <div className="mt-3">
             <p className="text-gray-600 text-sm leading-relaxed">
               {model.description}
@@ -37,7 +38,7 @@ const ModelCard = ({ model, ind, carts, setCarts }) => {
           </div>
 
           <div>
-            <h2 className="font-semibold">{model.price}/ monthly</h2>
+            <h2 className="font-semibold">{model.price}/ {model.period}</h2>
           </div>
 
           <div>
