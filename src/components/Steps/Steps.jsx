@@ -48,7 +48,7 @@ const Steps = () => {
               className="relative p-6 shadow-xl rounded-2xl flex flex-col items-center space-y-4 bg-white"
             >
               {/* Step Number */}
-              <div className="absolute -top-4 left-4">
+              <div className="absolute top-4 right-4">
                 <button className="text-sm md:text-base bg-linear-to-r from-[#4F39F6] to-[#9514FA] rounded-full px-3 py-1 text-white font-semibold">
                   {index + 1 < 10 ? `0${index + 1}` : index + 1}
                 </button>

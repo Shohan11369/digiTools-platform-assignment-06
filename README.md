@@ -1,16 +1,22 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+1.Name of my Project : Digi-tools-platfrom
 
-Currently, two official plugins are available:
+2.Description: A simple and elegant react application to browser tools and manage a shopping cart.When a user click on products carts, the products details are displayed and Each product includes a "Buy" option. When a product is purchased, it is added to the cart section, where all selected products are shown along with the total price. The application also includes a payment process.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-## React Compiler
+3.Technologies Used
+React – For building the user interface
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Tailwind CSS & DaisyUI – For modern, clean styling
 
-## Expanding the ESLint configuration
+React-Toastify – For helpful popup notifications
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Google Fonts – Featuring "Open Sans" and "Inter" for great readability
+
+
+4.Top Features
+Smooth Tabs: Easily switch between viewing Products and  Cart with one click.
+
+Live Cart Count: The cart tab updates instantly to show exactly how many items i've added.
+
+Clean Design: Uses a premium purple-to-blue gradient and organized sections for a professional look
