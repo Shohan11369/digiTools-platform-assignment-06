@@ -9,6 +9,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Steps from "./components/Steps/Steps";
 import PricingSection from "./components/PricingSection/PricingSection";
 import Transform from "./components/Transform/Transform";
+import Footer from "./components/Footer/Footer";
 
 const getModels = async () => {
   const res = await fetch("/data.json");
@@ -72,6 +73,8 @@ function App() {
       <PricingSection/>
 
       <Transform/>
+
+      <Footer/>
     </>
   );
 }
