@@ -6,6 +6,9 @@ import Cart from "./components/Cart/Cart";
 import Models from "./components/Models/Models";
 
 import Navbar from "./components/Navbar/Navbar";
+import Steps from "./components/Steps/Steps";
+import PricingSection from "./components/PricingSection/PricingSection";
+import Transform from "./components/Transform/Transform";
 
 const getModels = async () => {
   const res = await fetch("/data.json");
@@ -62,6 +65,13 @@ function App() {
       ) : (
         <Cart  carts={carts} setCarts={setCarts}/>
       )}
+
+      {/* steps */}
+      <Steps/>
+
+      <PricingSection/>
+
+      <Transform/>
     </>
   );
 }
