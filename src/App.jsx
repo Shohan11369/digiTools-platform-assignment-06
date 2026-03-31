@@ -24,7 +24,7 @@ function App() {
 
   return (
     <>
-      <Navbar />
+      <Navbar carts={carts} />
       <Banner />
       <Starts />
 
@@ -51,7 +51,7 @@ function App() {
               ? "bg-linear-to-r from-[#4F39F6] to-[#9514FA] text-white"
               : ""
           }`}
-          aria-label="Cart"
+          aria-label={`cart (${carts.length})`}
           onClick={() => setActiveTab("Cart")}
         />
       </div>
