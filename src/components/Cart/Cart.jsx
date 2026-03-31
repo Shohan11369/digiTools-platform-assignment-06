@@ -1,5 +1,6 @@
 import React from "react";
 import { MdDelete } from "react-icons/md";
+import { toast } from "react-toastify";
 
 const Cart = ({ carts, setCarts }) => {
   // total count
@@ -8,6 +9,7 @@ const Cart = ({ carts, setCarts }) => {
 
   const handlePaymentButton = () => {
     setCarts([]);
+    toast.success("Payment successful")
   };
 
   //   delete function
@@ -17,6 +19,10 @@ const Cart = ({ carts, setCarts }) => {
 
     const filterArray = carts.filter((i) => i.id !== item.id);
     setCarts(filterArray);
+
+      
+
+    toast.error("Delete cart")
   };
 
   return (

@@ -1,11 +1,21 @@
 import React, { useState } from "react";
 import { FaCheck } from "react-icons/fa";
+import { toast } from "react-toastify";
 const ModelCard = ({ model, ind, carts, setCarts }) => {
   const [isBuy, setIsBuy] = useState(false);
 
   const handleButton = () => {
     setIsBuy(true);
-    setCarts([...carts, model])
+
+    const isFound = carts.find((item) => item.id === model.id);
+
+    if (isFound) {
+      toast.error("Product already in cart");
+      return;
+    }
+
+    setCarts([...carts, model]);
+    toast.success("Added to cart");
   };
 
   return (
