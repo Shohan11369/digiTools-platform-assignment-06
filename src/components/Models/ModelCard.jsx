@@ -26,16 +26,16 @@ const ModelCard = ({ model, carts, setCarts }) => {
       >
         <div className="flex justify-end">
           <button
-          className={`btn-end px-2 py-1 rounded-md text-sm font-semibold ${
-            model.tag === "Best Seller"
-              ? "bg-yellow-400 text-black" 
-              : model.tag === "Popular"
-                ? "bg-green-500 text-white" 
-                : "bg-red-200 text-black" 
-          }`}
-        >
-          {model.tag}
-        </button>
+            className={`btn-end px-2 py-1 rounded-md text-sm font-semibold ${
+              model.tag === "Best Seller"
+                ? "bg-yellow-400 text-black"
+                : model.tag === "Popular"
+                  ? "bg-green-500 text-white"
+                  : "bg-red-200 text-black"
+            }`}
+          >
+            {model.tag}
+          </button>
         </div>
 
         <div className="  ">
@@ -71,7 +71,12 @@ const ModelCard = ({ model, carts, setCarts }) => {
         <div>
           <button
             onClick={handleButton}
-            className="btn bg-linear-to-r from-[#4F39F6] to-[#9514FA] text-white w-full"
+            className={`btn w-full text-white transition-all duration-300 
+        ${
+          isBuy
+            ? "bg-green-500"
+            : "bg-linear-to-r from-[#4F39F6] to-[#9514FA]"
+        }`}
           >
             {isBuy ? "Purchase" : "Buy Now"}
           </button>

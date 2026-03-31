@@ -25,9 +25,8 @@ const Cart = ({ carts, setCarts }) => {
 
   return (
     <div>
-      
       <div className=" flex justify-center  bg-gray-50">
-        <div className="p-5 shadow shadow-amber-50  bg-white rounded-2xl">
+        <div className="p-5 w-full max-w-md md:max-w-2xl lg:max-w-3xl mx-auto shadow shadow-amber-50 bg-white rounded-2xl">
           <h1 className="text-xl font-bold mb-6 text-start">Your Carts</h1>
 
           {carts.length === 0 ? (
@@ -36,7 +35,7 @@ const Cart = ({ carts, setCarts }) => {
             </p>
           ) : (
             <>
-              <div className="mb-4 space-y-5">
+              <div className="mb-4 mx-auto space-y-5">
                 {carts.map((item) => (
                   <div key={item.id}>
                     <div className="flex justify-start items-center gap-4 p-5 bg-gray-100 rounded-2xl">
